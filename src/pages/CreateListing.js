@@ -103,13 +103,12 @@ function CreateListing() {
       if (location === undefined || location.includes('undefined')) {
         setLoading(false);
         toast.error('Please enter a correct address');
-        console.log(data);
+
         return;
       }
     } else {
       geolocation.lat = latitude;
       geolocation.lng = longitude;
-      location = address;
     }
 
     // store images in firebase
@@ -166,9 +165,10 @@ function CreateListing() {
       timestamp: serverTimestamp(),
     };
 
+    formDataCopy.location = address;
     delete formDataCopy.images;
     delete formDataCopy.address;
-    location && (formDataCopy.location = location);
+
     !formDataCopy.offer && delete formDataCopy.discountedPrice;
 
     const docRef = await addDoc(collection(db, 'listings'), formDataCopy);
