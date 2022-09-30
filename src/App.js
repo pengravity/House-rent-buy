@@ -13,6 +13,7 @@ import Navbar from './components/Navbar';
 import Category from './pages/Category';
 import CreateListing from './pages/CreateListing';
 import Listing from './pages/Listing';
+import Contact from './pages/Contact';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           </Route>
           <Route path='/sign-in' element={<Signin />} />
           <Route path='/sign-up' element={<Signup />} />
+          <Route path='/contact/:landlordId' element={<Contact />} />
           <Route path='/create-listing' element={<CreateListing />} />
           <Route
             path='/category/:categoryName/:listingId'
