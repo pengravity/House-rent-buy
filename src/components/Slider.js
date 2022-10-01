@@ -8,7 +8,7 @@ import 'swiper/css/bundle';
 import Spinner from './Spinner';
 
 function Slider() {
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(true);
   const [listings, setListings] = useState(null);
 
   const navigate = useNavigate();
